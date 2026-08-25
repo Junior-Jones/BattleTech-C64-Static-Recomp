@@ -1,0 +1,14 @@
+{
+  "schema": "battletech-c64-c06-compact-aot-v1",
+  "status": "COMPACT_EXACT_BLOCK_AUTHORITY",
+  "block_count": 21637,
+  "call_shadow_block_count": 2470,
+  "removed_wrapper_shard_count": 54,
+  "removed_wrapper_source_bytes": 7869583,
+  "removed_wrapper_header_bytes": 1190147,
+  "original_catalog_bytes": 2802046,
+  "compact_catalog_bytes": 2348045,
+  "original_catalog_sha256": "7d549c572489b810317f3efae522107ad9b1a42ba2061ceaa63f6c656e300184",
+  "compact_catalog_sha256": "9135dfb885f02fe03cca7118ede3ef069dc7efddf8504bf4771be1effb6cea2d",
+  "coverage_policy": "All exact block metadata, identity/view guards, successors and fail-closed target classifications are retained; only redundant wrapper bodies and their function-pointer table are folded into one dispatcher."
+}

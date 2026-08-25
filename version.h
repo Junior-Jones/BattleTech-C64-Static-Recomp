@@ -1,0 +1,5 @@
+#ifndef BT_RECOMP_VERSION_H
+#define BT_RECOMP_VERSION_H
+#define BT_RECOMP_VERSION "1.0.0"
+#define BT_RECOMP_VERSION_W L"1.0.0"
+#endif

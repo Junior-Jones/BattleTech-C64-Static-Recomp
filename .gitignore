@@ -1,0 +1,26 @@
+# Local build output
+Build/
+Test/
+obj/
+*.o
+*.obj
+*.exe
+libbt_static_core_runtime.a
+
+# User-supplied game media and generated runtime data
+Rom/*
+!Rom/README.txt
+*.d64
+*.D64
+settings.ini
+frontend.log
+*.btpm
+*.btstate
+*.ppm
+
+# Local credentials and environment files
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
