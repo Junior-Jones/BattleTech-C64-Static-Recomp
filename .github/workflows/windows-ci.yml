@@ -24,6 +24,21 @@ jobs:
       - name: Check out source
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
-      - name: Build Release and run ROM-free tests
-        run: .\\build-windows.ps1 -BuildDir "$env:RUNNER_TEMP\\static-recomp-build"
+      - name: Set up MinGW64 toolchain
+        id: msys2
+        uses: msys2/setup-msys2@66cd2cce69caa17b53920067426061ca1de3a884 # v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: mingw-w64-x86_64-toolchain
 
+      - name: Build Release and run ROM-free tests
+        shell: pwsh
+        run: |
+          $toolRoot = Join-Path '${{ steps.msys2.outputs.msys2-location }}' 'mingw64\bin'
+          .\build-windows.ps1 `
+            -BuildDir "$env:RUNNER_TEMP\static-recomp-build" `
+            -Gcc (Join-Path $toolRoot 'gcc.exe') `
+            -Ar (Join-Path $toolRoot 'ar.exe') `
+            -Windres (Join-Path $toolRoot 'windres.exe') `
+            -Strip (Join-Path $toolRoot 'strip.exe')
