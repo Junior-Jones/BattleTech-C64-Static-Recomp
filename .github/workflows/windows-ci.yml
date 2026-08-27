@@ -35,7 +35,9 @@ jobs:
       - name: Build Release and run ROM-free tests
         shell: pwsh
         run: |
-          $toolRoot = Join-Path '${{ steps.msys2.outputs.msys2-location }}' 'mingw64\bin'
+          $msysRoot = '${{ steps.msys2.outputs.msys2-location }}'
+          $toolRoot = Join-Path $msysRoot 'mingw64\bin'
+          $env:PATH = "$toolRoot;$(Join-Path $msysRoot 'usr\bin');$env:PATH"
           .\build-windows.ps1 `
             -BuildDir "$env:RUNNER_TEMP\static-recomp-build" `
             -Gcc (Join-Path $toolRoot 'gcc.exe') `
