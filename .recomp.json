@@ -1,0 +1,18 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "BattleTech: The Crescent Hawk's Inception",
+  "project": "BattleTech C64 Static Recomp",
+  "system": "Commodore 64",
+  "type": "recomp",
+  "status": "paused",
+  "targets": ["Windows"],
+  "toolchain": "Unspecified",
+  "approach": "Custom static recompilation developed with ChatGPT, following the author's Starter C64 instructions.",
+  "maintainers": [
+    {"name": "Junior-Jones", "link": "https://github.com/Junior-Jones"}
+  ],
+  "links": [
+    {"label": "Repository", "url": "https://github.com/Junior-Jones/BattleTech-C64-Static-Recomp"}
+  ],
+  "notes": "Development is currently paused. No work is underway at present."
+}
